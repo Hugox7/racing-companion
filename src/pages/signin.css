@@ -1,0 +1,22 @@
+#signin {
+    background: #eee;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-container {
+    height: 500px;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+#form-container .ant-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#form-container .ant-alert {
+    margin-bottom: 20px;
+}
