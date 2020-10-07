@@ -1,4 +1,4 @@
-#signin {
+#signup {
     background: #eee;
     height: 100%;
     display: flex;
@@ -6,17 +6,17 @@
     align-items: center;
 }
 
-#form-container {
-    height: 550px;
+#signup-form {
+    min-height: 550px;
     background: rgb(255, 255, 255);
     padding: 20px;
 }
 
-#form-container .ant-btn {
+#signup-form .ant-btn {
     width: 100%;
     margin-top: 15px;
 }
 
-#form-container .ant-alert {
+#signup-form .ant-alert {
     margin-bottom: 20px;
 }

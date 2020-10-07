@@ -14,14 +14,16 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
             {context => {
                 if (context.loading) {
                     return <Loading />
-                } else if (context.isConnected) {
+                } else if (context.isConnected && token) {
                     return (<Route {...rest} render={props => {
                         return <Component context={context} {...props} />
                     }} />)
                 } else if (!context.isConnected && !token) {
                     return <Redirect to='/signin' />
+                // } else if (!context.isConnected && token) {
+                //     return <Redirect to='/signin' />
                 } else {
-                    return null
+                    return <Loading />;
                 }
             }}
         </UserContext.Consumer>

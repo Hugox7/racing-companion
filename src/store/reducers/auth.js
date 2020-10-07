@@ -8,6 +8,12 @@ const userInitialState = {
     isConnected: false,
 }
 
+const signupInititalState = {
+    loading: false,
+    error: null,
+    message: null,
+}
+
 const login = (state = userInitialState, action) => {
     switch (action.type) {
         case authTypes.LOGIN:
@@ -19,7 +25,7 @@ const login = (state = userInitialState, action) => {
         case authTypes.LOGIN_SUCCESS:
             return {
                 ...state,
-                ...action.data,
+                user: action.data,
                 loading: false,
                 isConnected: true,
             };
@@ -41,6 +47,7 @@ const login = (state = userInitialState, action) => {
              return {
                 ...state,
                 loading: false,
+                userError: null,
                 isConnected: true,
                 user: action.data,
              };
@@ -56,6 +63,32 @@ const login = (state = userInitialState, action) => {
     }
 }
 
+const signup = (state = signupInititalState, action) => {
+    switch (action.type) {
+        case authTypes.SIGNUP:
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
+        case authTypes.SIGNUP_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                message: action.data,
+            };
+        case authTypes.SIGNUP_FAILED:
+            return {
+                ...state,
+                loading: false,
+                error: action.data,
+            };
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     login,
+    signup
 });

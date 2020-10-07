@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import { UserContext } from '../providers/userProvider';
-import Loading from './Loading';
 
 const PublicRoute = ({ component: Component, ...rest }) => {
 

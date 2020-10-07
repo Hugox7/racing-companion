@@ -1,0 +1,14 @@
+#home {
+    padding: 20px;
+}
+
+#champList {
+    margin-top: 20px;
+}
+
+#champ-list-part {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}

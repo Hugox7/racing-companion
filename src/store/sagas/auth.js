@@ -12,6 +12,7 @@ export function* loginSaga (action) {
         const response = yield call(authApi.login, {
             name: action.data.name,
             password: action.data.password,
+            remember: action.data.remember,
         });
 
         yield call(storeToken, response.accessToken);
@@ -19,6 +20,21 @@ export function* loginSaga (action) {
 
     } catch (err) {
         return yield put(authActions.loginFailed(err));
+    }
+}
+
+export function* signupSaga (action) {
+    try {
+        const response = yield call(authApi.signup, {
+            name: action.data.name,
+            email: action.data.email,
+            password: action.data.password,
+        });
+
+        return yield put(authActions.signupSuccess(response));
+
+    } catch (err) {
+        return yield put(authActions.signupFailed(err));
     }
 }
 
@@ -35,4 +51,5 @@ export function* getUserSaga (action) {
 export default function* authSaga() {
     yield takeLatest(authTypes.LOGIN, loginSaga);
     yield takeLatest(authTypes.GETUSER, getUserSaga);
+    yield takeLatest(authTypes.SIGNUP, signupSaga)
 }

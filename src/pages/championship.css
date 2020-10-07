@@ -1,0 +1,27 @@
+#champ {
+    padding: 20px;
+}
+
+#champ-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#champ-info-part {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.champ-info-plus {
+    margin: 20px 40px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.champ-info-plus label {
+    font-weight: bold;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Alert } from 'antd';
+import { Form, Input, Button, Alert, Checkbox } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -48,7 +48,7 @@ class Signin extends React.Component {
                             onFinish={this.handleFinish}
                         >
                             <Form.Item
-                                label="Username"
+                                label="Nom d'utilisateur"
                                 name="name"
                                 rules={[
                                 {
@@ -61,7 +61,7 @@ class Signin extends React.Component {
                             </Form.Item>
     
                             <Form.Item
-                                label="Password"
+                                label="Mot de passe"
                                 name="password"
                                 rules={[
                                 {
@@ -71,6 +71,10 @@ class Signin extends React.Component {
                                 ]}
                             >
                                 <Input.Password />
+                            </Form.Item>
+
+                            <Form.Item name="remember" valuePropName="checked">
+                                <Checkbox>Se souvenir de moi</Checkbox>
                             </Form.Item>
     
                             <Form.Item>
